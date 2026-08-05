@@ -525,7 +525,11 @@
     "meta": {
       "version": 5
     },
-    "net_colors": null,
+    "net_colors": {
+      "+10V": "rgb(255, 69, 0)",
+      "+3V3": "rgb(255, 173, 0)",
+      "+BATT": "rgb(255, 0, 42)"
+    },
     "netclass_assignments": null,
     "netclass_patterns": []
   },
@@ -683,15 +687,15 @@
     ]
   ],
   "text_variables": {
-    "DOC_NAME": "OpenESC_20X20",
-    "DOC_HANDLE": "openesc-20x20",
-    "DOC_VARIANT": "20×20",
-    "DOC_TAGLINE": "AM32 4-in-1 BLDC ESC — 4× independent AT32F421 channels, DShot",
     "DOC_FIRMWARE": "AM32",
-    "DOC_PROTOCOL": "DShot",
-    "DOC_MCU": "AT32F421G8U7 (QFN-28) ×4",
+    "DOC_HANDLE": "openesc-20x20",
     "DOC_INPUT": "+BATT 6S",
-    "DOC_RATING": "6S input; 165 A current-sense full-scale, not bench-characterized"
+    "DOC_MCU": "AT32F421G8U7 (QFN-28) ×4",
+    "DOC_NAME": "OpenESC_20X20",
+    "DOC_PROTOCOL": "DShot",
+    "DOC_RATING": "6S input; 165 A current-sense full-scale, not bench-characterized",
+    "DOC_TAGLINE": "AM32 4-in-1 BLDC ESC — 4× independent AT32F421 channels, DShot",
+    "DOC_VARIANT": "20×20"
   },
   "tuning_profiles": {
     "meta": {
