@@ -31,8 +31,8 @@ replicate_layout.log
 # Production output (generated, re-exportable)
 **/production/
 
-# Fabrication toolkit config
-fabrication-toolkit-options.json
+# Vendor datasheets (local only; COMPONENT_REVIEW.md stays tracked)
+hardware/datasheets/*.pdf
 
 # Python
 __pycache__/
@@ -42,15 +42,8 @@ __pycache__/
 .claude/
 CLAUDE.md
 
-# Repo-specific
+# Repo-specific local files
 OpenFC/
-
-# Internal docs — keep markdowns local; README is the public doc
-*.md
-!README.md
-
-# Archive of stale design docs and unused scripts (local reference only)
-docs/
-
-# Internal analysis dumps (machine-local paths)
+hardware/V_BETA_CHANGELIST.md
+hardware/docs/archive/
 hardware/schematic_analysis.json
