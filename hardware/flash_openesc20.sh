@@ -176,7 +176,7 @@ wait_for_stlink_connect() {
 LOOP_MODE=false
 if [[ "${1:-}" == "--loop" ]]; then
     LOOP_MODE=true
-    echo "Loop mode enabled — swap boards on jig, auto-flashes next."
+    echo "Loop mode enabled: swap boards on jig, auto-flashes next."
     echo ""
 fi
 

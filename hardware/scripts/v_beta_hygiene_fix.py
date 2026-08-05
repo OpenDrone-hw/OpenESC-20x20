@@ -1,4 +1,4 @@
-"""V-beta hygiene fixes — surgical line-by-line property-value substitutions.
+"""V-beta hygiene fixes: surgical line-by-line property-value substitutions.
 
 Operates on .kicad_sch files in BINARY MODE. Touches only the bytes inside
 property values; never modifies whitespace, line endings, indentation, or
@@ -38,7 +38,7 @@ REF_RE = re.compile(rb'\(property "Reference" "([^"]+)"')
 FP_RE = re.compile(rb'\(property "Footprint" "([^"]+)"')
 
 # Library-cache fence. Inside (lib_symbols ...), property values are template
-# defaults — we leave them alone. They match Reference="C", "R", "U", etc.
+# defaults: we leave them alone. They match Reference="C", "R", "U", etc.
 # Only operate on instance blocks (outside lib_symbols).
 
 
@@ -135,7 +135,7 @@ def process(path: Path, apply: bool) -> int:
     print(f"  newline count preserved:  {orig_nl}->{new_nl}  [{ 'OK' if nl_ok else 'FAIL' }]")
 
     if not (paren_ok and nl_ok):
-        print(f"  ERROR: structural integrity broken — refusing to write.")
+        print(f"  ERROR: structural integrity broken, refusing to write.")
         return 0
 
     if apply and new_data != original:
