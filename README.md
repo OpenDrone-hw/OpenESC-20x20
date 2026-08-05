@@ -11,6 +11,17 @@ Part of the incutec OpenDrone line (`incutec-hw/OpenESC-20x20`).
 
 > A larger **[OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30)** (30.5×30.5 mm) shares this design and mirrors this repo. The two differ only in board/mounting size and a few power-stage parts.
 
+## Open source hardware certification
+
+<a href="https://certification.oshwa.org/be000028.html">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="images/oshwa-certified-dark.svg" />
+    <img src="images/oshwa-certified.svg" width="160" alt="OSHWA Certified Open Source Hardware — BE000028" />
+  </picture>
+</a>
+
+OpenESC-20x20 is **certified open source hardware** by the [Open Source Hardware Association](https://www.oshwa.org/), OSHWA UID **[BE000028](https://certification.oshwa.org/be000028.html)**.
+
 ## Architecture
 
 Four fully independent ESC channels share a common power input and telemetry connector. Each channel has its own MCU and gate driver; the high-current stage is six MOSFETs per channel (three half-bridges). This is the distributed-MCU AM32 4-in-1 topology rather than a single-MCU design. Values below are extracted from the KiCad design files (`hardware/4in1-mini.kicad_sch`, `hardware/ESC.kicad_sch`, `hardware/4in1-mini.kicad_pcb`) and the production BOM (`hardware/production/Rev2-20x20_bom.csv`).
