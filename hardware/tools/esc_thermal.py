@@ -14,7 +14,7 @@ import argparse
 import math
 
 # ═══════════════════════════════════════════════════════════════
-#  MOSFET profiles — all values from datasheets
+#  MOSFET profiles: all values from datasheets
 # ═══════════════════════════════════════════════════════════════
 
 PROFILES = {
@@ -71,8 +71,8 @@ PROFILES = {
         "vf_body_cold": 0.75,       # V  @ ~30A, 25°C (p3 source-drain diode curve)
         "vf_body_hot":  0.60,       # V  @ ~30A, 100°C
         "trr":          29e-9,      # s  (p2)
-        "qrr":          113e-9,     # C  (p2) — much higher than SP40N03GNJ
-        "rth_jc":       0.96,       # °C/W (p2) — better, larger package
+        "qrr":          113e-9,     # C  (p2), much higher than SP40N03GNJ
+        "rth_jc":       0.96,       # °C/W (p2), better, larger package
         "pd_max":       130.0,      # W
         "tj_max":       150.0,      # °C
         # Board
@@ -253,7 +253,7 @@ def print_full_report(profile_key: str, i: float, v_bus: float, duty: float,
     eff = p_motor / (p_motor + p_board) * 100 if p_motor > 0 else 0
 
     print("=" * 70)
-    print(f"  4in1 ESC Power Loss Report  —  {p['name']}")
+    print(f"  4in1 ESC Power Loss Report  -  {p['name']}")
     print(f"  AM32 6-Step Trapezoidal  |  NSG2065Q gate driver")
     print("=" * 70)
     print(f"  Battery voltage:      {v_bus:.1f} V")
@@ -395,7 +395,7 @@ def compare_boards(v_bus: float, duty: float, f_pwm: float, comp_pwm: bool,
 
     print()
     print("=" * 78)
-    print("  BOARD COMPARISON  —  20×20 vs 30×30")
+    print("  BOARD COMPARISON  -  20×20 vs 30×30")
     print(f"  {v_bus:.0f}V  {duty*100:.0f}% duty  {f_pwm/1e3:.0f}kHz  "
           f"comp_pwm={'ON' if comp_pwm else 'OFF'}  {n_active} phases")
     print("=" * 78)
