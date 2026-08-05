@@ -9,6 +9,8 @@ Open-source 4-in-1 BLDC ESC with a 20 × 20 mm mounting pattern, built around fo
 
 Part of the incutec OpenDrone line (`incutec-hw/OpenESC-20x20`).
 
+Build video: [How Drone ESCs Work (so I built my own)](https://www.youtube.com/watch?v=TwAmmPxOpTM)
+
 > A larger **[OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30)** (30.5×30.5 mm) shares this design and mirrors this repo. The two differ only in board/mounting size and a few power-stage parts.
 
 ## Open source hardware certification
@@ -101,6 +103,11 @@ hardware/                                KiCad 9 project (everything to build/fa
 ├── V_BETA_CHANGELIST.md                 Beta spec: stackup/copper-weight, 6S-only rationale (local)
 └── docs/archive/                        Design notes, alternatives, sourcing, cost analysis (local)
 ```
+
+## Links
+
+- Product page: [opendrone.be/products/openesc](https://opendrone.be/products/openesc)
+- Video channel: [JustFPV on YouTube](https://www.youtube.com/@justfpv1432)
 
 ## License
 
