@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
-# flash_openesc20.sh — Production flash script for OpenESC_20 (AT32F421G8U7)
+# flash_openesc20.sh: Production flash script for OpenESC-20x20 (AT32F421G8U7)
 # Flashes bootloader + AM32 firmware via ST-LINK V2 pogo-pin jig
+#
+# Required environment variables (no defaults, set both before running):
+#   AM32_UNLOCKER_DIR  Path to an AM32-unlocker checkout (provides the bundled
+#                      openocd, ST-LINK probe config, and AM32 bootloader binaries)
+#   AM32_DIR           Path to an AM32 firmware checkout with the OpenESC_20
+#                      target built (obj/AM32_OPENESC_20_F421_*.bin)
 set -euo pipefail
 
 # ─── Paths ───────────────────────────────────────────────────────────────────
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
-UNLOCKER_DIR="/Users/stan/Library/Mobile Documents/com~apple~CloudDocs/adjustableBuck/AM32-unlocker"
+UNLOCKER_DIR="${AM32_UNLOCKER_DIR:?Set AM32_UNLOCKER_DIR to your AM32-unlocker checkout}"
 
 OPENOCD="${UNLOCKER_DIR}/tools/macos/openocd/bin/openocd"
 OPENOCD_SCRIPTS="${UNLOCKER_DIR}/tools/macos/openocd/share/openocd/scripts"
 PROBE_CFG="${UNLOCKER_DIR}/probes/stlink.cfg"
 
 BOOTLOADER="${UNLOCKER_DIR}/bootloaders/AM32_F421_BOOTLOADER_PB4_V17.bin"
-FIRMWARE="/Users/stan/Documents/GitHub/AM32/obj/AM32_OPENESC_20_F421_2.20.bin"
+FIRMWARE="${AM32_DIR:?Set AM32_DIR to your AM32 firmware checkout}/obj/AM32_OPENESC_20_F421_2.20.bin"
 
 # ─── Audio feedback (macOS) ──────────────────────────────────────────────────
 sound_pass() {

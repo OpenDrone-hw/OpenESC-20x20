@@ -1,13 +1,13 @@
-# OpenESC_20X20
+# OpenESC-20x20
 
 <p>
-<img src="images/front.png" width="400" alt="OpenESC_20X20 top" />
-<img src="images/back.png" width="400" alt="OpenESC_20X20 bottom" />
+<img src="images/front.png" width="400" alt="OpenESC-20x20 top" />
+<img src="images/back.png" width="400" alt="OpenESC-20x20 bottom" />
 </p>
 
 Open-source 4-in-1 BLDC ESC with a 20 × 20 mm mounting pattern, built around four independent AT32F421 motor controllers running AM32. Six-layer, DShot over the standard 8-pin connector. Designed in KiCad for JLCPCB assembly.
 
-Part of the incutec OpenDrone line (`incutec-hw/OpenESC_20X20`).
+Part of the incutec OpenDrone line (`incutec-hw/OpenESC-20x20`).
 
 > A larger **[OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30)** (30.5×30.5 mm) shares this design and mirrors this repo. The two differ only in board/mounting size and a few power-stage parts.
 
