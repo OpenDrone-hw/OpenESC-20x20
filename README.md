@@ -51,6 +51,7 @@ Part-level detail (MCU, gate driver, power stage, current sense, protection) is 
 | `hardware/production/` | Fabrication exports per revision (generated, not tracked in git) |
 | `hardware/datasheets/` | Component review notes ([COMPONENT_REVIEW.md](hardware/datasheets/COMPONENT_REVIEW.md)); vendor PDFs are kept local, not tracked |
 | `hardware/flash_openesc20.sh` | Production flash script (AM32 bootloader via ST-LINK) |
+| `hardware/tools/`, `hardware/scripts/` | Analysis and maintenance scripts |
 | `20x20-ESC-QC/` | Press-contact QC fixture, separate KiCad 10 project |
 | `libs/KiCad-Library` | Shared Incutec symbol/footprint/3D library (git submodule) |
 | `images/` | Board renders and certification marks |
