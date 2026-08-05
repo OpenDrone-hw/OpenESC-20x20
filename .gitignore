@@ -51,3 +51,6 @@ OpenFC/
 
 # Archive of stale design docs and unused scripts (local reference only)
 docs/
+
+# Internal analysis dumps (machine-local paths)
+hardware/schematic_analysis.json
