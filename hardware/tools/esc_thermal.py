@@ -3,11 +3,16 @@
 4in1 ESC Power Loss & Thermal Calculator
 
 Models AM32 trapezoidal 6-step commutation with steady-state and transient thermal.
-Supports both 20x20 and 30x30 ESC variants with datasheet-verified parameters.
 
-Datasheets:
-  20x20: SP40N03GNJ (Siliup Ver-1.2) + NSG2065Q (NSIC V1.0), Rg=15Ω
-  30x30: SP40N01GHNK (Siliup Ver-1.1) + NSG2065Q (NSIC V1.0), Rg=8Ω
+MOSFET profiles:
+  20x20: SP40N03GNJ (Siliup Ver-1.2), Rg=15Ω. SUPERSEDED POWER STAGE. The
+         shipping OpenESC-20x20 uses 24x DOY180N03T (30 V, PowerDI3333-8, LCSC
+         C49441966, see hardware/docs/DESIGN.md). This profile has not been
+         re-parameterized from the DOY180N03T datasheet, so its loss and
+         temperature numbers do not describe the current board. Board geometry
+         (1030 mm², 6 layers) is current.
+  30x30: SP40N01GHNK (Siliup Ver-1.1), Rg=8Ω. Matches the OpenESC-30x30 board.
+  Gate driver for both: NSG2065Q (NSIC V1.0).
 """
 
 import argparse
@@ -19,7 +24,7 @@ import math
 
 PROFILES = {
     "20x20": {
-        "name":         "20×20  SP40N03GNJ (3×3mm)",
+        "name":         "20×20  SP40N03GNJ (3×3mm, SUPERSEDED, not the shipping part)",
         # ── SP40N03GNJ datasheet (Ver-1.2) ──
         "rds_on":       2.9e-3,     # Ω typ @ Vgs=10V, ID=20A, 25°C
         "rds_on_max":   3.7e-3,     # Ω max

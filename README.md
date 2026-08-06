@@ -32,15 +32,7 @@ Build video: [How Drone ESCs Work (so I built my own)](https://www.youtube.com/w
 
 ## Specifications
 
-| Parameter | Value |
-|---|---|
-| Channels | 4 independent BLDC channels |
-| Input | 6S LiPo |
-| Signal protocol | DShot, one line per channel, extended DShot telemetry |
-| Firmware | AM32, per-channel AT32F421 target |
-| PCB | 6-layer, 1.69 mm, 20 x 20 mm mounting pattern |
-
-Part-level detail (MCU, gate driver, power stage, current sense, protection) is in [hardware/docs/DESIGN.md](hardware/docs/DESIGN.md).
+The full specification table (channels, input, signal protocol, firmware, PCB stackup) and part-level detail (MCU, gate driver, power stage, current sense, protection) are in [hardware/docs/DESIGN.md](hardware/docs/DESIGN.md).
 
 ## Repository layout
 
@@ -48,14 +40,13 @@ Part-level detail (MCU, gate driver, power stage, current sense, protection) is 
 |---|---|
 | `hardware/` | KiCad 10 project: schematics, PCB, project-local libraries |
 | `hardware/docs/` | Design documentation ([DESIGN.md](hardware/docs/DESIGN.md)) |
-| `hardware/production/` | Fabrication exports per revision (generated, not tracked in git) |
-| `hardware/datasheets/` | Component review notes ([COMPONENT_REVIEW.md](hardware/datasheets/COMPONENT_REVIEW.md)); vendor PDFs are kept local, not tracked |
-| `hardware/flash_openesc20.sh` | Production flash script (AM32 bootloader via ST-LINK) |
-| `hardware/tools/`, `hardware/scripts/` | Analysis and maintenance scripts |
+| `hardware/production/` | Fabrication exports (generated, gitignored) |
+| `hardware/flash_openesc20.sh` | Production flash script, see [Manufacturing](#manufacturing) |
+| `hardware/tools/` | Analysis scripts (`esc_thermal.py` power loss and thermal model) |
 | `20x20-ESC-QC/` | Press-contact QC fixture, separate KiCad 10 project |
 | `libs/KiCad-Library` | Shared Incutec symbol/footprint/3D library (git submodule) |
 | `images/` | Board renders and certification marks |
-| `licensing/` | License notes, third-party notices, trademark policy |
+| `licensing/` | Third-party asset notices, trademark policy |
 
 ## Design entry points
 
@@ -64,7 +55,7 @@ Part-level detail (MCU, gate driver, power stage, current sense, protection) is 
 - Board layout: `hardware/4in1-mini.kicad_pcb`, 6 copper layers
 - QC fixture: `20x20-ESC-QC/20x20-ESC-QC.kicad_pro`
 
-Symbols and footprints are embedded in the design files, so the schematics and board open without any external library. The project-local libraries are `hardware/components.kicad_sym` and `hardware/4in1ESC.pretty/`; the project lib tables also reference the shared `Incutec` library from the `libs/KiCad-Library` submodule, used for new parts. The QC fixture carries its own project-local libraries (`ESC-QC.kicad_sym`, `ESC-QC.pretty/`).
+Symbols and footprints are embedded in the design files, so the schematics and board open without any external library. The project-local libraries are `hardware/components.kicad_sym` and `hardware/4in1ESC.pretty/`; the project lib tables also reference the shared `Incutec` library from the `libs/KiCad-Library` submodule, used for new parts. The QC fixture carries its own project-local libraries (`ESC-QC.kicad_sym`, `ESC-QC.pretty/`) and, for its contact pads, KiCad's stock `TestPoint` library, see [20x20-ESC-QC/README.md](20x20-ESC-QC/README.md).
 
 ## Build and export
 
@@ -90,4 +81,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
-Hardware licensed under [CERN-OHL-S-2.0](https://ohwr.org/cern_ohl_s_v2.txt). See [LICENSE](LICENSE), [licensing/README.md](licensing/README.md), [licensing/THIRD_PARTY.md](licensing/THIRD_PARTY.md), and [licensing/TRADEMARKS.md](licensing/TRADEMARKS.md). One bundled 3D model asset carries an upstream GPL notice, see the third-party notes.
+Hardware licensed under [CERN-OHL-S-2.0](https://ohwr.org/cern_ohl_s_v2.txt), covering the design files, the project-local symbols and footprints, and the manufacturing data in this repository. See [LICENSE](LICENSE), [licensing/THIRD_PARTY.md](licensing/THIRD_PARTY.md), and [licensing/TRADEMARKS.md](licensing/TRADEMARKS.md). One bundled 3D model asset carries an upstream GPL notice, see the third-party notes.
+
+`LICENSE` stays at the repository root so GitHub detects the primary project license.

@@ -55,7 +55,7 @@ Connector ground returns on the shield/mounting pads P1/P2 (both GND). Pin 4, th
 
 ## Variants and revisions
 
-This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30) (30.5 x 30.5 mm), shares this design and mirrors this repo; the two differ only in board/mounting size and a few power-stage parts. Fabrication sets are generated per revision into `hardware/production/` (gitignored) with the Fabrication Toolkit.
+This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30) (30.5 x 30.5 mm), shares this design and mirrors this repo; the two differ only in board/mounting size and a few power-stage parts. Fabrication export procedure: see [Manufacturing](../../README.md#manufacturing).
 
 ## QC fixture
 
@@ -63,7 +63,7 @@ This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-
 
 ## Firmware
 
-[AM32](https://github.com/am32-firmware/AM32) is incutec's default ESC firmware. Boards ship with the AM32 bootloader pre-loaded; firmware is flashed and configured in-browser at [am32.ca](https://am32.ca). Production flashing uses `hardware/flash_openesc20.sh` (AM32 bootloader via ST-LINK). Each channel's AT32F421G8U7 is an independent AM32 target. The AT32F421 + NSG2065Q per-channel topology and the DShot signal nets are the standard AM32 hardware target for this board class. Works with Betaflight and other DShot-capable flight controllers.
+[AM32](https://github.com/am32-firmware/AM32) is incutec's default ESC firmware. Boards ship with the AM32 bootloader pre-loaded; firmware is flashed and configured in-browser at [am32.ca](https://am32.ca). Production flashing: see [Manufacturing](../../README.md#manufacturing). Each channel's AT32F421G8U7 is an independent AM32 target. The AT32F421 + NSG2065Q per-channel topology and the DShot signal nets are the standard AM32 hardware target for this board class. Works with Betaflight and other DShot-capable flight controllers.
 
 ## Revisions
 
