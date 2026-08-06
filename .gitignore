@@ -10,8 +10,8 @@ _autosave-*
 \#auto_saved_files#
 
 # KiCad generated/local
+# *.kicad_dru is NOT listed here: custom DRC rules are hand-authored design input.
 *.kicad_prl
-*.kicad_dru
 *.kicad_sch-bak
 *.kicad_pcb-bak
 *.lck
@@ -24,14 +24,15 @@ replicate_layout.log
 # KiCad local history
 **/.history/
 
-# 3D exports (not library files)
-**/.step
+# 3D board exports (generated; library assets under *.3dshapes/ stay tracked)
+hardware/*.step
+20x20-ESC-QC/*.step
 **/*.glb
 
 # Production output (generated, re-exportable)
 **/production/
 
-# Vendor datasheets (local only; COMPONENT_REVIEW.md stays tracked)
+# Vendor datasheets (local only)
 hardware/datasheets/*.pdf
 
 # Python

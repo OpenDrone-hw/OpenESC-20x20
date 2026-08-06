@@ -11,11 +11,17 @@ of its exposed pads.
 
 ## Layout / conventions (mirrors the parent repo)
 
-- KiCad 10 project: `20x20-ESC-QC.kicad_{pro,sch,pcb}`.
-- Project-local libraries only (never global):
-  - Symbols: `ESC-QC.kicad_sym` (via `sym-lib-table`)
-  - Footprints: `ESC-QC.pretty/` (via `fp-lib-table`)
-  - 3D models: `ESC-QC.3dshapes/`
+- KiCad 10 project: `20x20-ESC-QC.kicad_{pro,sch,pcb}`. The schematic is an empty
+  stub: the fixture is laid out directly on the board, with no netlist.
+- Project-local libraries, declared in `sym-lib-table` and `fp-lib-table`:
+  - Symbols: `ESC-QC.kicad_sym` (one symbol, `4in1ESC-negative`, currently unused
+    because the schematic is a stub)
+  - Footprints: `ESC-QC.pretty/` (one footprint, `4in1ESC-negative`: 34 pads plus
+    the Edge.Cuts geometry of the ESC contact face)
+  - 3D models: `ESC-QC.3dshapes/` (empty)
+- The 44 contact pads come from KiCad's stock global `TestPoint` library
+  (`TestPoint_Pad_2.0x2.0mm`, `3.0x3.0mm`, `4.0x4.0mm`), not from a project-local
+  library. Nothing else resolves globally.
 - License: hardware CERN-OHL-S-2.0 (same as parent).
 
 ## Reference geometry
