@@ -55,7 +55,7 @@ Connector ground returns on the shield/mounting pads P1/P2 (both GND). Pin 4, th
 
 ## Variants and revisions
 
-This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30) (30.5 x 30.5 mm), shares this design and mirrors this repo; the two differ only in board/mounting size and a few power-stage parts. Fabrication sets are generated per revision into `hardware/production/` (gitignored) with the Fabrication Toolkit; the revision history is in [CHANGELOG.md](../../CHANGELOG.md).
+This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30) (30.5 x 30.5 mm), shares this design and mirrors this repo; the two differ only in board/mounting size and a few power-stage parts. Fabrication sets are generated per revision into `hardware/production/` (gitignored) with the Fabrication Toolkit.
 
 ## QC fixture
 
@@ -64,3 +64,12 @@ This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-
 ## Firmware
 
 [AM32](https://github.com/am32-firmware/AM32) is incutec's default ESC firmware. Boards ship with the AM32 bootloader pre-loaded; firmware is flashed and configured in-browser at [am32.ca](https://am32.ca). Production flashing uses `hardware/flash_openesc20.sh` (AM32 bootloader via ST-LINK). Each channel's AT32F421G8U7 is an independent AM32 target. The AT32F421 + NSG2065Q per-channel topology and the DShot signal nets are the standard AM32 hardware target for this board class. Works with Betaflight and other DShot-capable flight controllers.
+
+## Revisions
+
+- **Rev2-20x20** (2026-06-05): validated build, current production export set.
+- **V2** (2026-05-04): export `V2`.
+- **V1** (2026-03-18): export `V1`; a NextPCB variant export (`V1_nextpcb`) preceded it on 2026-03-14.
+- **v0.3** (2025-11-13): export `v0.3`.
+- **v0.2** (2025-11-13): export `v0.2`.
+- **v0.1** (2025-11-10): first production export.
