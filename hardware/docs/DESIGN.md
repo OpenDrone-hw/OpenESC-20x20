@@ -55,7 +55,7 @@ Connector ground returns on the shield/mounting pads P1/P2 (both GND). Pin 4, th
 
 ## Variants and revisions
 
-This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-30x30](https://github.com/incutec-hw/OpenESC-30x30) (30.5 x 30.5 mm), shares this design and mirrors this repo; the two differ only in board/mounting size and a few power-stage parts. Fabrication export procedure: see [Manufacturing](../../README.md#manufacturing).
+This repo is the 20x20 member of the OpenESC family. A larger sibling, [OpenESC-30x30](https://github.com/OpenDrone-hw/OpenESC-30x30) (30.5 x 30.5 mm), shares this design and mirrors this repo; the two differ only in board/mounting size and a few power-stage parts. Fabrication export procedure: see [Manufacturing](../../README.md#manufacturing).
 
 ## QC fixture
 
