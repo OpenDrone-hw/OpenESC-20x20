@@ -22,7 +22,7 @@ Four fully independent ESC channels share a common power input and telemetry con
 | Power MOSFETs | DOY180N03T, N-channel, 30 V, PowerDI3333-8, 24 total |
 | Current sense | Board-level high-side: INA186A3IDCKR (100 V/V, SC-70-6) across 1x 0.2 mOhm 2512 shunt in the +BATT feed, 20 mV/A, 165 A full-scale at 3.3 V ADC |
 | Input | +BATT direct from connector/pads, 6S |
-| Input protection | 2x SMF24A-T13 TVS (24 V standoff) |
+| Input protection | none. The 2x SMF24A-T13 TVS are removed: their 24 V standoff sits below the 25.2 V a full 6S pack reaches |
 | Buck regulator | LMR54406DBVR (SOT-23-6) + FTC160808S4R7MBCA 4.7 uH inductor, produces the +10 V gate-drive rail (FB 115k/10k, Vref 0.8 V, 10.0 V out) |
 | LDO | TLV76733DRVR (WSON-6), +10 V in, +3V3 out (MCUs, sensing) |
 | Signal protocol | DShot (4 independent signal lines, one per channel) |
@@ -30,11 +30,11 @@ Four fully independent ESC channels share a common power input and telemetry con
 | PCB | 6-layer, 1.69 mm, outline approx. 31.3 x 33.1 mm |
 | Mounting pattern | 20 x 20 mm, 4x 3.0 mm holes (M2 hardware with grommets) |
 
-The board is 6S only: the input clamp is set by the SMF24A-T13 TVS (24 V standoff). Current and voltage ratings are not printed in the design files; the MOSFET (DOY180N03T) and current-sense full-scale (165 A) bound the practical envelope. Characterize before quoting a hard rating.
+The board is 6S only. There is no input TVS; current and voltage ratings are not printed in the design files, and the MOSFET (DOY180N03T) and current-sense full-scale (165 A) bound the practical envelope. Characterize before quoting a hard rating.
 
 ## Power tree
 
-+BATT (6S) feeds the MOSFET drains directly, the current shunt, and the LMR54406DBVR buck. The buck produces +10 V for the four gate drivers; the TLV76733DRVR LDO drops +10 V to +3V3 for the four MCUs and the current-sense amplifier. Input clamp: 2x SMF24A-T13 TVS.
++BATT (6S) feeds the MOSFET drains directly, the current shunt, and the LMR54406DBVR buck. The buck produces +10 V for the four gate drivers; the TLV76733DRVR LDO drops +10 V to +3V3 for the four MCUs and the current-sense amplifier. There is no input TVS.
 
 ## Connector
 
