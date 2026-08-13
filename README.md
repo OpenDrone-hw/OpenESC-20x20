@@ -10,47 +10,41 @@ standard 8-pin connector.
 <img src="images/back.png" width="400" alt="OpenESC-20x20 bottom" />
 </p>
 
-|  |  |
+[![Status](https://img.shields.io/badge/status-alpha-e08c00)](https://github.com/OpenDrone-hw/.github/blob/main/CONTRIBUTING.md#the-life-of-a-project)
+[![Shop](https://img.shields.io/badge/shop-opendrone.be-c89d2e)](https://opendrone.be/products/openesc)
+[![Discord](https://img.shields.io/badge/Discord-%23esc-5865F2?logo=discord&logoColor=white)](https://discord.com/channels/1494019459822653512/1494782966302507118)
+[![Video](https://img.shields.io/badge/YouTube-How%20Drone%20ESCs%20Work-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=TwAmmPxOpTM)
+[![OSHWA](https://img.shields.io/badge/OSHWA-BE000028-0099b0)](https://certification.oshwa.org/be000028.html)
+
+## Specifications
+
+| | |
 |---|---|
-| Size | 20 x 20 mm mounting pattern, 4x M2 with grommets |
-| Input | 6S |
-| Interface | 8-pin JST SH, DShot |
-| Firmware | [AM32](https://github.com/am32-firmware/AM32) |
+| Continuous | 40 A / channel |
+| Firmware | AM32 |
+| ESC protocol | DShot, bidirectional |
+| Telemetry | Extended DShot |
+| Input | 2-6S LiPo |
+| BEC | None |
+| MCU | One per motor |
+| MOSFETs | 6 per motor |
+| Current sense | On-board, 165 A |
+| TVS protection | None |
+| FC connector | JST-SH 8-pin |
+| Mounting | 20 x 20 mm, 3.0 mm holes |
+| Dimensions | 31.2 x 33.0 mm |
+| PCB | 6-layer, 1.6 mm, 2 oz copper |
 
-<a href="https://certification.oshwa.org/be000028.html">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="images/oshwa-certified-dark.svg" />
-    <img src="images/oshwa-certified.svg" width="160" alt="OSHWA Certified Open Source Hardware, BE000028" />
-  </picture>
-</a>
-
-Certified open source hardware by the [Open Source Hardware Association](https://www.oshwa.org/),
-OSHWA UID **[BE000028](https://certification.oshwa.org/be000028.html)**.
+Technical write-up, part list and layout constraints: [AGENTS.md](AGENTS.md).
 
 ## In the line
 
-- [OpenESC-30x30](https://github.com/OpenDrone-hw/OpenESC-30x30): the same
-  design at 30.5 x 30.5 mm and 3S-8S, for larger builds.
-- [OpenFC-Lite-Mini](https://github.com/OpenDrone-hw/OpenFC-Lite-Mini): the
-  20 x 20 mm flight controller this stacks with. It has no onboard motor
-  drivers, so it needs an ESC like this one.
-
-## Get one
-
-[opendrone.be/products/openesc](https://opendrone.be/products/openesc)
-
-Build video: [How Drone ESCs Work (so I built my own)](https://www.youtube.com/watch?v=TwAmmPxOpTM)
-on [JustFPV](https://www.youtube.com/@justfpv1432)
+What pairs with what, and what is available:
+[opendrone.be](https://opendrone.be).
 
 ## Contributing
 
-Issues and pull requests are welcome on any repo. KiCad files cannot be merged,
-so say what you intend to change before you do, on
-[Discord](https://discord.gg/v3sWmTcx3R).
-
-The design itself, the part list and the layout constraints are in
-[AGENTS.md](AGENTS.md). How everything works:
-[CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## License
 
