@@ -134,7 +134,9 @@ pattern. The board outline is larger than the mounting pattern.
 
 | Rev | Date | Change |
 |---|---|---|
-| Rev2-20x20 | 2026-06-05 | Validated build, current production export set. |
+| Rev3.1 | 2026-08-14 | Export `20x20_ESC_Rev3.1`, current. PCB-only bulk cap bank (19 CL refs), board setup on the line standard. |
+| Rev3 | 2026-08-11 | Rev3 tag. |
+| Rev2-20x20 | 2026-06-05 | Validated build. |
 | V2 | 2026-05-04 | Export `V2`. |
 | V1 | 2026-03-18 | Export `V1`. A NextPCB variant export `V1_nextpcb` preceded it on 2026-03-14. |
 | v0.3 | 2025-11-13 | Export `v0.3`. |
