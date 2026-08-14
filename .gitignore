@@ -78,3 +78,11 @@ stencil_out/
 #   *.kicad_dru             design intent
 #   fabrication-toolkit-options.json
 #   *.kicad_sym  *.pretty/  *.3dshapes/   project-local libraries
+
+# --- repo-specific, below the canonical block ---------------------------------
+# Internal working notes, kept local on purpose
+hardware/V_BETA_CHANGELIST.md
+hardware/docs/archive/
+# Fixture STEPs regenerate via export_step.py; sets ship as release assets
+20x20-ESC-QC/*.step
+20x20-ESC-Flashing/*.step
