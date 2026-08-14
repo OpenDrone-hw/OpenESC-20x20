@@ -134,7 +134,7 @@ pattern. The board outline is larger than the mounting pattern.
 
 | Rev | Date | Change |
 |---|---|---|
-| Rev3.1 | 2026-08-14 | Export `20x20_ESC_Rev3.1`, current. PCB-only bulk cap bank (19 CL refs), board setup on the line standard. |
+| Rev3.1 | 2026-08-14 | Export `20x20_ESC_Rev3.1`, current. Bulk bank: 22 x 10 uF 1206 on +BATT/GND, 21 of them PCB-only (19 CL refs absent from the schematic, CL50/CL51 doubled). Board setup on the line standard. |
 | Rev3 | 2026-08-11 | Rev3 tag. |
 | Rev2-20x20 | 2026-06-05 | Validated build. |
 | V2 | 2026-05-04 | Export `V2`. |
