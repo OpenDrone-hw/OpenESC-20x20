@@ -1,0 +1,11 @@
+# KiCad backup/lock files
+*-backups/
+*.lck
+*_autosave-*
+fp-info-cache
+
+# Build outputs
+production/
+
+# OS files
+.DS_Store

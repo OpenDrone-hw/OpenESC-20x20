@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "4in1-ESC-Flashing")(type "KiCad")(uri "${KIPRJMOD}/4in1-ESC-Flashing.kicad_sym")(options "")(descr "Project-local symbols from LCSC"))
+)
