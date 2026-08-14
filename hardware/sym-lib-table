@@ -1,5 +1,4 @@
 (sym_lib_table
   (version 7)
   (lib (name "components")(type "KiCad")(uri "${KIPRJMOD}/components.kicad_sym")(options "")(descr ""))
-	(lib (name "Incutec")(type "KiCad")(uri "${KIPRJMOD}/../libs/KiCad-Library/symbol/Incutec.kicad_sym")(options "")(descr "incutec shared library (submodule libs/KiCad-Library)"))
 )
