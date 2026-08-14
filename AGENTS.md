@@ -17,7 +17,7 @@ the standard 8-pin connector. 6S only, and there is no input TVS.
 | Board | `hardware/4in1-mini.kicad_pcb`, 6 layers, 1.69 mm, outline approx 31.3 x 33.1 mm |
 | QC fixture | `20x20-ESC-QC/`, a separate project. Press-contact fixture, board is a negative of the ESC contact face |
 | Local library | `hardware/components.kicad_sym`, `hardware/4in1ESC.pretty/`. Frozen pre-consolidation libraries: use them, do not add to them |
-| Shared library | [OpenDrone-hw/KiCad-Library](https://github.com/OpenDrone-hw/KiCad-Library), submodule at `libs/KiCad-Library` |
+| Shared library | [OpenDrone-hw/KiCad-Library](https://github.com/OpenDrone-hw/KiCad-Library), catalogue only; every library this board uses is local to the repo |
 | Design rules | `hardware/4in1-mini.kicad_dru` |
 | Fab config | `hardware/fabrication-toolkit-options.json` |
 | License | CERN-OHL-S-2.0 |
