@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "ESC-QC")(type "KiCad")(uri "${KIPRJMOD}/ESC-QC.pretty")(options "")(descr "QC fixture footprints (pogo receptacles, contact pads, alignment)"))
-)
