@@ -15,8 +15,7 @@ an 8S board is a separate SKU.
 | KiCad project | `hardware/4in1-mini.kicad_pro` |
 | Root schematic | `hardware/4in1-mini.kicad_sch` (power, current sense, connector) plus `hardware/ESC.kicad_sch`, one channel instantiated 4x |
 | Board | `hardware/4in1-mini.kicad_pcb`, 6 layers, 1.6 mm (the stackup field reads 1.69 mm; JLC ships 1.6) |
-| QC fixture | `20x20-ESC-QC/`, a separate project. Press-contact fixture, board is a negative of the ESC contact face |
-| Flashing jig | `20x20-ESC-Flashing/`, a separate project. ST-LINK V2 pogo-pin jig used by the flash script |
+| Fixtures | [OpenDrone-Fixtures](https://github.com/OpenDrone-hw/OpenDrone-Fixtures): `OpenESC-20x20-QC/` press-contact QC fixture, `OpenESC-20x20-Flashing/` ST-LINK pogo-pin jig used by the flash script |
 | Local library | `hardware/components.kicad_sym`, `hardware/4in1ESC.pretty/`, `hardware/4in1ESC.3dshapes/`. Frozen pre-consolidation libraries: use them, do not add to them |
 | Shared library | [OpenDrone-hw/KiCad-Library](https://github.com/OpenDrone-hw/KiCad-Library), catalogue only; every library this board uses is local to the repo |
 | Design rules | `hardware/4in1-mini.kicad_dru` |
@@ -138,7 +137,7 @@ and any other DShot-capable flight controller.
 
 Production flashing: `hardware/flash_openesc20.sh` writes the AM32 F421 PB4
 bootloader and the `AM32_OPENESC_20_F421` firmware build over an ST-LINK V2
-and the `20x20-ESC-Flashing/` pogo-pin jig. It requires `AM32_UNLOCKER_DIR`
+and the `OpenESC-20x20-Flashing` pogo-pin jig from OpenDrone-Fixtures. It requires `AM32_UNLOCKER_DIR`
 (AM32-unlocker checkout: bundled openocd, probe config, bootloaders) and
 `AM32_DIR` (AM32 checkout with the OpenESC_20 target built).
 
