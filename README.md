@@ -26,7 +26,7 @@ Maintained by [@Just4Stan](https://github.com/Just4Stan).
 | Firmware | AM32 |
 | ESC protocol | DShot, bidirectional |
 | Telemetry | Extended DShot |
-| Input | 2-6S LiPo |
+| Input | 2-6S LiPo (6.0-25.2 V) |
 | BEC | None |
 | MCU | One per motor |
 | MOSFETs | 6 per motor |
