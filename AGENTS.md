@@ -99,6 +99,7 @@ the 25.2 V a full 6S pack reaches, so none is fitted on the 2S-6S input.
 | Buck inductor | U5 | FTC160808S4R7MBCA | C46594347 | 4.7 uH |
 | LDO | U1 | TLV76733DRVR, WSON-6 | C2848334 | +10 V to +3V3 |
 | Connector | J1 | SM08B-SRSS-TB, JST SH 8-pin | C160407 | |
+| Bulk electrolytic, supplied | n/a | 470 uF | | Shipped with the board, not fitted to it. The user solders it across the battery terminals. Standard pairing of on-board ceramics with a pack-side elco; it dominates the bus capacitance once installed |
 
 ## Power
 
