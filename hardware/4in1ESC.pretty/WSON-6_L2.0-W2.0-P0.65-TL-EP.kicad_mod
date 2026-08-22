@@ -1,29 +1,170 @@
-(module easyeda2kicad:WSON-6_L2.0-W2.0-P0.65-TL-EP (layer F.Cu) (tedit 5DC5F6A4)
+(footprint "WSON-6_L2.0-W2.0-P0.65-TL-EP"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -4.65 0)
+		(layer "F.SilkS")
+		(uuid "2fbe45dc-b747-4b0c-8ae8-850b6ba8bcf0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "WSON-6_L2.0-W2.0-P0.65-TL-EP"
+		(at 0 4.65 0)
+		(layer "F.Fab")
+		(uuid "08ef0d64-1bb6-4cff-bcf8-1899f4b0e7bd")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2a72cd4f-21f2-43b8-acfd-5625b7baf4a3")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8a0ef987-5f26-4571-9cb7-3d49ac08a056")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
 	(attr smd)
-	(fp_text reference REF** (at 0 -4.65) (layer F.SilkS)
-		(effects (font (size 1 1) (thickness 0.15)))
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.08 -1.08)
+		(end 1.08 -1.08)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "547d345e-669c-47eb-8428-6a19521908b9")
 	)
-	(fp_text value WSON-6_L2.0-W2.0-P0.65-TL-EP (at 0 4.65) (layer F.Fab)
-		(effects (font (size 1 1) (thickness 0.15)))
+	(fp_line
+		(start -1.08 1.08)
+		(end 1.08 1.08)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "8cfa982d-05db-4b2f-ac72-be364bf00ea6")
 	)
-	(fp_text user %R (at 0 0) (layer F.Fab)
-		(effects (font (size 1 1) (thickness 0.15)))
+	(fp_circle
+		(center -1.63 -0.65)
+		(end -1.56 -0.65)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "49e3a7dd-f22c-444a-9cbd-fbb0e71d0499")
 	)
-	(fp_line (start -1.08 -1.08) (end 1.08 -1.08) (layer F.SilkS) (width 0.15))
-	(fp_line (start -1.08 1.08) (end 1.08 1.08) (layer F.SilkS) (width 0.15))
-	(pad 1 smd oval (at -1.03 -0.65 -90.00) (size 0.36 0.61) (layers F.Cu F.Paste F.Mask))
-	(pad 2 smd oval (at -1.03 0.00 -90.00) (size 0.36 0.61) (layers F.Cu F.Paste F.Mask))
-	(pad 3 smd oval (at -1.03 0.65 -90.00) (size 0.36 0.61) (layers F.Cu F.Paste F.Mask))
-	(pad 4 smd oval (at 1.03 0.65 -90.00) (size 0.36 0.61) (layers F.Cu F.Paste F.Mask))
-	(pad 5 smd oval (at 1.03 0.00 -90.00) (size 0.36 0.61) (layers F.Cu F.Paste F.Mask))
-	(pad 6 smd oval (at 1.03 -0.65 -90.00) (size 0.36 0.61) (layers F.Cu F.Paste F.Mask))
-	(pad 7 smd rect (at 0.00 0.00 0.00) (size 1.00 1.60) (layers F.Cu F.Paste F.Mask))
-	(fp_circle (center -1.63 -0.65) (end -1.56 -0.65) (layer F.SilkS) (width 0.15))
-	(fp_circle (center -1.30 -0.65) (end -1.23 -0.65) (layer Cmts.User) (width 0.15))
-	(fp_circle (center -1.00 -1.00) (end -0.97 -1.00) (layer F.Fab) (width 0.06))
-	(model "${KIPRJMOD}/4in1ESC.3dshapes/WSON-6_L2.0-W2.0-H0.8-P0.65.step"
-		(offset (xyz 0 0 0))
-		(scale (xyz 1 1 1))
-		(rotate (xyz 0 0 0))
+	(fp_circle
+		(center -1.3 -0.65)
+		(end -1.23 -0.65)
+		(stroke
+			(width 0.15)
+			(type solid)
+		)
+		(fill no)
+		(layer "Cmts.User")
+		(uuid "d0cb3258-6e67-436f-8185-774dd04d7bd0")
+	)
+	(fp_circle
+		(center -1 -1)
+		(end -0.97 -1)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "1cdb4e7a-41b2-402e-8824-7da1b1a1d90f")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "3911234b-ed34-43de-91c4-a54a9e587707")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd oval
+		(at -1.03 -0.65 270)
+		(size 0.36 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "db6cb44a-87d1-43ed-ab0a-e9ca34e327c5")
+	)
+	(pad "2" smd oval
+		(at -1.03 0 270)
+		(size 0.36 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "5731bbbc-22e8-4b33-b845-22f6941703bf")
+	)
+	(pad "3" smd oval
+		(at -1.03 0.65 270)
+		(size 0.36 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "b579133f-02d0-4599-a104-339e52936577")
+	)
+	(pad "4" smd oval
+		(at 1.03 0.65 270)
+		(size 0.36 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "c436bca0-8405-496b-82dc-65eaba84052d")
+	)
+	(pad "5" smd oval
+		(at 1.03 0 270)
+		(size 0.36 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "eee6f3c5-f9ec-4420-bfa2-44703f0920b9")
+	)
+	(pad "6" smd oval
+		(at 1.03 -0.65 270)
+		(size 0.36 0.61)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "47227f40-019e-462a-b535-320281b3eef0")
+	)
+	(pad "7" smd rect
+		(at 0 0)
+		(size 1 1.6)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "86a0d987-6172-415c-8393-db76bb0c8956")
+	)
+	(embedded_fonts no)
+	(model "${KICAD10_3DMODEL_DIR}/Package_SON.3dshapes/WSON-6-1EP_2x2mm_P0.65mm_EP1x1.6mm.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
 	)
 )
