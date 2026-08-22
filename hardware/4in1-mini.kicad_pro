@@ -661,7 +661,7 @@
         "uuid": "612d09d9-c556-41af-8a15-92be360f8e81"
       }
     ],
-    "used_designators": "",
+    "used_designators": "U14,Rsense1,Rsense3,R78,R89-92,C40-41,C47,C51-52,C54,C95-96,#PWR34,#PWR52,#PWR64,#PWR67,#PWR118-125",
     "variants": []
   },
   "sheets": [

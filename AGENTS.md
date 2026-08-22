@@ -83,15 +83,19 @@ Current sensing is **board level, not per channel**: an INA186A3IDCKR at
 30x30 sibling uses two shunts in parallel and reads twice the current at half
 the sensitivity.
 
-**`/CURR` is unusable below full throttle, measured 2026-08-21.** The shunt is
-high side, so both amplifier inputs ride the switching bus, and the
-common-mode feedthrough rectifies to a duty-dependent offset. Against a
-current clamp the chain reads +164% at 15% throttle, hard-fails at 80% (the
-raw ADC count itself collapses from ~680 to ~290 while the clamp holds a
-steady 32 A), and is honest only at 100% throttle where AM32 stops chopping:
-there it reads a clean +11 to +12% gain error. No filter, averaging or
-firmware change can reach it; the fix is a respin that either moves the shunt
-low side or gives the amplifier a matched input network. Until then anything
+**Rev3.2 adds a matched input network at the amplifier**: 1 k in each sense
+leg (R91/R92), 100 nF 50 V from each input to ground (C52/C54) and 1 uF
+across the inputs (C51). Through rev3.1 the bare high-side connection made
+`/CURR` unusable below full throttle, measured 2026-08-21: both amplifier
+inputs ride the switching bus and the common-mode feedthrough rectifies to a
+duty-dependent offset. Against a current clamp the chain read +164% at 15%
+throttle, hard-failed at 80% (the raw ADC count itself collapsed from ~680
+to ~290 while the clamp held a steady 32 A), and was honest only at 100%
+where AM32 stops chopping. The network attenuates the common-mode at the
+pins ~300x and the mismatch-converted differential to 2.8 mVpp worst case
+(SPICE, 1% R / 10% C opposed); scale is unchanged at 20 mV/A. Not yet
+verified on hardware: the acceptance test is the ESC-04 mid-throttle
+i_a-versus-clamp sweep on a rev3.2 board. On rev3.1 and earlier, anything
 consuming `/CURR` (Betaflight OSD current, mAh-drawn battery math) gets
 garbage at flight throttles. Evidence:
 `OpenDrone-Testing/Logs/esc-04-20x20-20260821T150430Z/`.
@@ -183,6 +187,7 @@ update-from-schematic without checking what it would delete.
 
 | Rev | Date | Change |
 |---|---|---|
+| Rev3.2 | 2026-08-22 | Export `20x20_ESC_Rev3.2`. Matched input network at the current-sense amplifier (R91/R92 1k, C52/C54 100n 50V, C51 1u) against the high-side common-mode feedthrough; shunt redrawn as Rsense2. Scale unchanged, 20 mV/A. |
 | Rev3.1 | 2026-08-14 | Export `20x20_ESC_Rev3.1`, current. Bulk bank: 22 x 10 uF 1206 on +BATT/GND, 21 of them PCB-only (19 CL refs absent from the schematic, CL50/CL51 doubled). Board setup moved to the line standard. |
 | Rev3 | 2026-08-11 | Rev3 tag. Input clamp diodes (D1, D2) removed. |
 | Rev2-20x20 | 2026-06-05 | Validated build. |
