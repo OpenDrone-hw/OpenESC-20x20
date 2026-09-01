@@ -6,9 +6,10 @@ product lineup.
 
 ## Repo
 
-| Maintainer | @Just4Stan (Discord juststan_) |
+| | |
 |---|---|
-| Status | See the `status-*` topic on the repo. |
+| Maintainer | @Just4Stan (Discord: juststan_) |
+| Status | See the `status-*` topic on the repo. Never written here. |
 | Designed in | KiCad 10 |
 | KiCad project | `hardware/4in1-mini.kicad_pro` |
 | Root schematic | `hardware/4in1-mini.kicad_sch` (power, current sense, connector) plus `hardware/ESC.kicad_sch`, one channel instantiated 4x |
@@ -40,9 +41,11 @@ Identical in every OpenDrone board repo. Do not edit here; edit the template.
 - **Reuse before you draw.** Check the `OpenDrone` library and its
   `PARTS-USED.md` first. If the part is there we have already sourced,
   footprinted and shipped it, and its symbol links to the exact committed
-  datasheet: place it from `OpenDrone`. Draw a new part only when the catalogue
-  has nothing that fits, and import it with `easyeda2kicad` from its LCSC
-  number. Pulling a newer catalogue is a deliberate, reviewed submodule commit.
+  datasheet: place it from `OpenDrone`. Draw a new part into `lib` only when
+  the catalogue has nothing that fits, imported with
+  `easyeda2kicad` from its LCSC number. Pulling a newer catalogue is a
+  deliberate, reviewed commit: `git submodule update --remote
+  hardware/KiCad-Library`, then DRC.
 - **One person holds a board layout at a time.** KiCad files do not merge. Say
   on Discord that you are taking it. See [CONTRIBUTING.md](CONTRIBUTING.md).
 - **Run ERC and DRC before every pull request.** Existing approved findings
@@ -60,10 +63,13 @@ kicad-cli pcb drc --schematic-parity --refill-zones hardware/4in1-mini.kicad_pcb
 kicad-cli sch export netlist --format kicadsexpr -o /tmp/4in1-mini.net hardware/4in1-mini.kicad_sch
 ```
 
-Reusable scripts (renders, STEP export, packaging art) come from Incutec
-hardware tooling; the OpenDrone release standard lives in
-`OpenDrone-hw/.github/RELEASES.md`;
-board-specific scripts live in `hardware/tools/`.
+On macOS `kicad-cli` is at
+`/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli`, and `pcbnew` imports
+only under KiCad's bundled Python. Reusable scripts for renders, STEP export,
+and packaging art come from Incutec hardware tooling. The OpenDrone release
+standard is
+[RELEASES.md](https://github.com/OpenDrone-hw/.github/blob/main/RELEASES.md).
+Board-specific scripts, where a board has any, live in `hardware/tools/`.
 
 ## Architecture
 
@@ -123,11 +129,11 @@ bidirectional extended DShot instead.
 
 ## Firmware
 
-[AM32 first needs a boatloader loaded using an ST-LINK
-(AM32_F421_BOOTLOADER_PB4_V19.hex)
-](https://github.com/am32-firmware/AM32) firmware is flashed and configured
-in-browser at [am32.ca](https://am32.ca). Works with Betaflight and any other
-DShot-capable flight controller.
+[AM32](https://github.com/am32-firmware/AM32). The bootloader
+(`AM32_F421_BOOTLOADER_PB4_V19.hex`) is loaded first with an ST-LINK; the
+firmware is then flashed and configured in-browser at
+[am32.ca](https://am32.ca). Works with Betaflight and any other DShot-capable
+flight controller.
 
 ## Layout rules
 
