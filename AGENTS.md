@@ -4,6 +4,76 @@ Open-Source 4-in-1 sensorless BLDC motor Electronic Speed Controller (ESC), 20 x
 20 mm mounting pattern (FPV Drone standard). Part of OpenDrone by Incutec
 product lineup.
 
+## Architecture
+
+Four independent channels share one power input and one connector. Per channel:
+an **AT32F421G8U7** (Cortex-M4, QFN-28) drives an **NSG2065Q** three-phase
+half-bridge gate driver, which drives six **DOY180N03T** MOSFETs, two per phase.
+One channel is drawn once in `ESC.kicad_sch` and instantiated four times.
+
+Current sensing is **board level, not per motor**: an INA186A3IDCKR at 100 V/V
+across a single 0.2 mOhm 2512 shunt in the +BATT feed. That gives 20 mV/A and
+165 A full scale against a 3.3 V ADC, reported as `/CURR`. The 30x30 sibling
+uses two shunts in parallel and reads twice the current at half the sensitivity.
+
+## Power
+
+```
+Battery + (2S-6S) ─► 0.2mOhm shunt ─► +BATT
++BATT ─┬─► MOSFET drains, motor phases
+       └─► LMR54406DBVR buck ─► +10V ─┬─► 4x gate driver
+                                      └─► TLV76733DRVR ─► +3V3 ─► 4x MCU, INA186
+```
+
+## Key parts
+
+| Function | Ref | Part | LCSC | Note |
+|---|---|---|---|---|
+| Motor MCU, x4 | U2, U6, U8, U10 | AT32F421G8U7, QFN-28 | C2765098 | One per channel. |
+| Gate driver, x4 | U3, U7, U9, U11 | NSG2065Q, QFN-24 | C41414478 | Standard footprint, many alternatives exist. |
+| Power MOSFET, x24 | Q1-Q24 | DOY180N03T, PowerDI3333-8 | C49441966 | 30 V, 6 per channel. Standard 3x3 DFN footprint, many alternatives exist. |
+| Current sense amp | U12 | INA186A3IDCKR, SC-70-6 | C2058245 | 100 V/V, board level high side |
+| Current shunt | Rsense1 | 0.2 mOhm 2512 | C695806 | Single, in the +BATT feed |
+| Buck | U13 | LMR54406DBVR, SOT-23-6 | C5219316 | 36 V in, 0.6 A; FB 115k/10k against 0.8 V, 10.0 V out |
+| Buck inductor | U5 | FTC160808S4R7MBCA | C46594347 | 4.7 uH |
+| LDO | U1 | TLV76733DRVR, WSON-6 | C2848334 | +10 V to +3V3 |
+| Connector | J1 | SM08B-SRSS-TB, JST SH 8-pin | C160407 | Also broken out as solder pads. |
+| Bulk electrolytic. | / | 470 uF 35V | / | To be installed on the battery connector by the user. |
+| Bulk ceramic | See PCB | 4.7 uF 1206, X7R 50 V | C380366 | 22 fitted |
+
+## Connectors and I/O
+
+Betaflight Standard:
+
+| Pin | Net | Function |
+|---|---|---|
+| 1 | +BATT | Battery positive |
+| 2 | GND | Ground |
+| 3 | /CURR | Current sense telemetry, INA186 output |
+| 4 | unconnected | See below |
+| 5 | /M1 | DShot, channel 1 |
+| 6 | /M2 | DShot, channel 2 |
+| 7 | /M3 | DShot, channel 3 |
+| 8 | /M4 | DShot, channel 4 |
+
+Pin 4 is the dedicated telemetry pin in the Betaflight 8-pin standard and is
+intentionally left unconnected: telemetry rides the motor signal lines over
+bidirectional extended DShot instead.
+
+## Layout rules
+
+Bulk decoupling on +BATT and GND exists on the PCB without matching schematic
+symbols. That is a deliberate board-only bank. Do not run
+update-from-schematic without checking what it would delete.
+
+## Firmware
+
+[AM32](https://github.com/am32-firmware/AM32). The bootloader
+(`AM32_F421_BOOTLOADER_PB4_V19.hex`) is loaded first with an ST-LINK; the
+firmware is then flashed and configured in-browser at
+[am32.ca](https://am32.ca). Works with Betaflight and any other DShot-capable
+flight controller.
+
 ## Repo
 
 | | |
@@ -24,6 +94,25 @@ product lineup.
 
 The project is named `4in1-mini`, not after the repo. Renaming it would break
 the fab archive names, the release assets and the website board art.
+
+## Environment
+
+```sh
+# schematic and board checks
+kicad-cli sch erc hardware/4in1-mini.kicad_sch
+kicad-cli pcb drc --schematic-parity --refill-zones hardware/4in1-mini.kicad_pcb
+
+# netlist, for scripted analysis
+kicad-cli sch export netlist --format kicadsexpr -o /tmp/4in1-mini.net hardware/4in1-mini.kicad_sch
+```
+
+On macOS `kicad-cli` is at
+`/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli`, and `pcbnew` imports
+only under KiCad's bundled Python. Reusable scripts for renders, STEP export,
+and packaging art come from Incutec hardware tooling. The OpenDrone release
+standard is
+[RELEASES.md](https://github.com/OpenDrone-hw/.github/blob/main/RELEASES.md).
+Board-specific scripts, where a board has any, live in `hardware/tools/`.
 
 ## Rules
 
@@ -50,96 +139,7 @@ Identical in every OpenDrone board repo. Do not edit here; edit the template.
   on Discord that you are taking it. See [CONTRIBUTING.md](CONTRIBUTING.md).
 - **Run ERC and DRC before every pull request.** Existing approved findings
   may remain; a new type or increased count must be reviewed before merge.
-  Commands below.
-
-## Environment
-
-```sh
-# schematic and board checks
-kicad-cli sch erc hardware/4in1-mini.kicad_sch
-kicad-cli pcb drc --schematic-parity --refill-zones hardware/4in1-mini.kicad_pcb
-
-# netlist, for scripted analysis
-kicad-cli sch export netlist --format kicadsexpr -o /tmp/4in1-mini.net hardware/4in1-mini.kicad_sch
-```
-
-On macOS `kicad-cli` is at
-`/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli`, and `pcbnew` imports
-only under KiCad's bundled Python. Reusable scripts for renders, STEP export,
-and packaging art come from Incutec hardware tooling. The OpenDrone release
-standard is
-[RELEASES.md](https://github.com/OpenDrone-hw/.github/blob/main/RELEASES.md).
-Board-specific scripts, where a board has any, live in `hardware/tools/`.
-
-## Architecture
-
-Four independent channels share one power input and one connector. Per channel:
-an **AT32F421G8U7** (Cortex-M4, QFN-28) drives an **NSG2065Q** three-phase
-half-bridge gate driver, which drives six **DOY180N03T** MOSFETs, two per phase.
-One channel is drawn once in `ESC.kicad_sch` and instantiated four times.
-
-Current sensing is **board level, not per motor**: an INA186A3IDCKR at 100 V/V
-across a single 0.2 mOhm 2512 shunt in the +BATT feed. That gives 20 mV/A and
-165 A full scale against a 3.3 V ADC, reported as `/CURR`. The 30x30 sibling
-uses two shunts in parallel and reads twice the current at half the sensitivity.
-
-## Key parts
-
-| Function | Ref | Part | LCSC | Note |
-|---|---|---|---|---|
-| Motor MCU, x4 | U2, U6, U8, U10 | AT32F421G8U7, QFN-28 | C2765098 | One per channel. |
-| Gate driver, x4 | U3, U7, U9, U11 | NSG2065Q, QFN-24 | C41414478 | Standard footprint, many alternatives exist. |
-| Power MOSFET, x24 | Q1-Q24 | DOY180N03T, PowerDI3333-8 | C49441966 | 30 V, 6 per channel. Standard 3x3 DFN footprint, many alternatives exist. |
-| Current sense amp | U12 | INA186A3IDCKR, SC-70-6 | C2058245 | 100 V/V, board level high side |
-| Current shunt | Rsense1 | 0.2 mOhm 2512 | C695806 | Single, in the +BATT feed |
-| Buck | U13 | LMR54406DBVR, SOT-23-6 | C5219316 | 36 V in, 0.6 A; FB 115k/10k against 0.8 V, 10.0 V out |
-| Buck inductor | U5 | FTC160808S4R7MBCA | C46594347 | 4.7 uH |
-| LDO | U1 | TLV76733DRVR, WSON-6 | C2848334 | +10 V to +3V3 |
-| Connector | J1 | SM08B-SRSS-TB, JST SH 8-pin | C160407 | Also broken out as solder pads. |
-| Bulk electrolytic. | / | 470 uF 35V | / | To be installed on the battery connector by the user. |
-| Bulk ceramic | See PCB | 4.7 uF 1206, X7R 50 V | C380366 | 22 fitted |
-
-## Power
-
-```
-Battery + (2S-6S) ─► 0.2mOhm shunt ─► +BATT
-+BATT ─┬─► MOSFET drains, motor phases
-       └─► LMR54406DBVR buck ─► +10V ─┬─► 4x gate driver
-                                      └─► TLV76733DRVR ─► +3V3 ─► 4x MCU, INA186
-```
-
-## Connectors and I/O
-
-Betaflight Standard:
-
-| Pin | Net | Function |
-|---|---|---|
-| 1 | +BATT | Battery positive |
-| 2 | GND | Ground |
-| 3 | /CURR | Current sense telemetry, INA186 output |
-| 4 | unconnected | See below |
-| 5 | /M1 | DShot, channel 1 |
-| 6 | /M2 | DShot, channel 2 |
-| 7 | /M3 | DShot, channel 3 |
-| 8 | /M4 | DShot, channel 4 |
-
-Pin 4 is the dedicated telemetry pin in the Betaflight 8-pin standard and is
-intentionally left unconnected: telemetry rides the motor signal lines over
-bidirectional extended DShot instead.
-
-## Firmware
-
-[AM32](https://github.com/am32-firmware/AM32). The bootloader
-(`AM32_F421_BOOTLOADER_PB4_V19.hex`) is loaded first with an ST-LINK; the
-firmware is then flashed and configured in-browser at
-[am32.ca](https://am32.ca). Works with Betaflight and any other DShot-capable
-flight controller.
-
-## Layout rules
-
-Bulk decoupling on +BATT and GND exists on the PCB without matching schematic
-symbols. That is a deliberate board-only bank. Do not run
-update-from-schematic without checking what it would delete.
+  Commands are in Environment above.
 
 ## Revisions
 
