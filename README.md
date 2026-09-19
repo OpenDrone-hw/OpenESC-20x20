@@ -16,8 +16,6 @@ standard 8-pin connector.
 [![Video](https://img.shields.io/badge/YouTube-How%20Drone%20ESCs%20Work-FF0000?logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=TwAmmPxOpTM)
 [![OSHWA](https://img.shields.io/badge/OSHWA-BE000028-0099b0)](https://certification.oshwa.org/be000028.html)
 
-Maintained by [@Just4Stan](https://github.com/Just4Stan).
-
 ## Specifications
 
 | | |
