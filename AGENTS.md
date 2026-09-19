@@ -68,11 +68,12 @@ update-from-schematic without checking what it would delete.
 
 ## Firmware
 
-[AM32](https://github.com/am32-firmware/AM32). The bootloader
-(`AM32_F421_BOOTLOADER_PB4_V19.hex`) is loaded first with an ST-LINK; the
-firmware is then flashed and configured in-browser at
-[am32.ca](https://am32.ca). Works with Betaflight and any other DShot-capable
-flight controller.
+[AM32](https://github.com/am32-firmware/AM32), target `OPENESC_20`. The AM32
+bootloader is loaded first with an ST-LINK, then the firmware;
+`hardware/flash_openesc20.sh` does both on the pogo-pin jig and names the
+bootloader and firmware files it expects in its header (set `AM32_UNLOCKER_DIR`
+and `AM32_DIR` first). Configuration is in-browser at [am32.ca](https://am32.ca).
+Works with Betaflight and any other DShot-capable flight controller.
 
 ## Repo
 
@@ -90,6 +91,7 @@ flight controller.
 | Design rules | `hardware/4in1-mini.kicad_dru` |
 | Fab config | `hardware/fabrication-toolkit-options.json` |
 | Board setup | 6 layers, 0.09 mm clearance and track, 0.16mm on outer layers (2 oz), via 0.35 on 0.20 drill |
+| Datasheets and shared parts | `hardware/KiCad-Library/datasheet/`, indexed with SHA-256 hashes in `datasheet/manifest.json`; `hardware/KiCad-Library/PARTS-USED.md` lists every proven shared part, column `Boards` filtered for `OpenESC-20x20` |
 | License | CERN-OHL-S-2.0 |
 
 The project is named `4in1-mini`, not after the repo. Renaming it would break
@@ -106,11 +108,11 @@ kicad-cli pcb drc --schematic-parity --refill-zones hardware/4in1-mini.kicad_pcb
 kicad-cli sch export netlist --format kicadsexpr -o /tmp/4in1-mini.net hardware/4in1-mini.kicad_sch
 ```
 
-On macOS `kicad-cli` is at
-`/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli`, and `pcbnew` imports
-only under KiCad's bundled Python. Reusable scripts for renders, STEP export,
-and packaging art come from Incutec hardware tooling. The OpenDrone release
-standard is
+On macOS `kicad-cli` is at `/Applications/KiCad/KiCad.app/Contents/MacOS/kicad-cli`
+and `KPY`, KiCad's bundled Python and the only one that imports `pcbnew`, is
+`/Applications/KiCad/KiCad.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3`.
+Reusable scripts for renders, STEP export and packaging art come from Incutec
+hardware tooling. The OpenDrone release standard is
 [RELEASES.md](https://github.com/OpenDrone-hw/.github/blob/main/RELEASES.md).
 Board-specific scripts, where a board has any, live in `hardware/tools/`.
 
@@ -155,3 +157,14 @@ Identical in every OpenDrone board repo. Do not edit here; edit the template.
 | v0.3 | 2025-11-13 | Export `v0.3`. |
 | v0.2 | 2025-11-13 | Export `v0.2`. |
 | v0.1 | 2025-11-10 | First production export. |
+
+## By task
+
+Board-specific paths are in Environment above. `KPY` is KiCad's bundled
+Python named there.
+
+- Check the design: run the ERC and DRC commands in Environment before every pull request.
+- Add a part: place it from the `OpenDrone` library if `hardware/KiCad-Library/PARTS-USED.md` lists it; otherwise import it into `lib` with `$KPY <hardware-tooling>/hardware/kicad/import_part.py` (read `--help` first), KiCad closed.
+- Render the board for the README: `$KPY <hardware-tooling>/hardware/kicad/render_board.py hardware/4in1-mini.kicad_pcb --outdir images`, KiCad closed.
+- Analyse the netlist: export it with the netlist command in Environment, then read it with a script; never hand-write a second BOM.
+- Update the shared library: `git submodule update --remote hardware/KiCad-Library`, run DRC, commit as its own reviewed change.
