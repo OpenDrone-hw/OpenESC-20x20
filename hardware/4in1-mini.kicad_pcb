@@ -331,6 +331,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a19ce1ed-b6c1-424e-af08-9510bf4c73fa")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/0f1ac7ef-71be-4cf4-81ac-90268323e1b3/b65e2be7-47e1-4bb9-82c6-27d434f8d677")
 		(sheetname "/ESC4/")
 		(sheetfile "ESC.kicad_sch")
@@ -736,6 +747,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "544b84d9-ac1a-48f5-bb9c-0b2c0a3c8d2a")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -1892,6 +1914,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a8ce81c1-26a1-402c-a176-d4ef9e147c41")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/f870c78f-43b6-4f66-afe4-21d85c4907b1/7a614b05-edaf-45dd-b454-62f750565c5a")
 		(sheetname "/ESC1/")
 		(sheetfile "ESC.kicad_sch")
@@ -2297,6 +2330,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "fbf1af38-3b6c-49e6-880b-db1a680900b4")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -2873,6 +2917,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "7167d1f6-cadd-4f49-9885-c8e82ce95979")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/0f1ac7ef-71be-4cf4-81ac-90268323e1b3/feada041-3f26-4ed6-b8f5-d6b054d8a23f")
 		(sheetname "/ESC4/")
 		(sheetfile "ESC.kicad_sch")
@@ -3278,6 +3333,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "726cda7d-25d7-4b40-a32b-ffc75ea7dcd9")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -4025,6 +4091,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a5ddf459-b510-429a-ab45-a6583383d70b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/0f1ac7ef-71be-4cf4-81ac-90268323e1b3/e1c307e0-da1e-4199-993c-565dacc1988b")
 		(sheetname "/ESC4/")
 		(sheetfile "ESC.kicad_sch")
@@ -4598,6 +4675,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "45e50b69-bc66-4622-a3d1-28213c0ff186")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/6061fcc0-8b26-44e0-b078-a202b47fdd16/b81d2055-72dd-4f80-8595-bad8791ff875")
 		(sheetname "/ESC3/")
 		(sheetfile "ESC.kicad_sch")
@@ -5006,6 +5094,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "81fea50d-2bf1-4688-a143-f6d07c23b130")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/f870c78f-43b6-4f66-afe4-21d85c4907b1/b65e2be7-47e1-4bb9-82c6-27d434f8d677")
 		(sheetname "/ESC1/")
 		(sheetfile "ESC.kicad_sch")
@@ -5411,6 +5510,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "f70ba0d1-3355-4e76-b1e5-113dae8e0490")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -5987,6 +6097,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "8f675329-7728-4803-880e-e2822f62dc63")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/6061fcc0-8b26-44e0-b078-a202b47fdd16/7a614b05-edaf-45dd-b454-62f750565c5a")
 		(sheetname "/ESC3/")
 		(sheetfile "ESC.kicad_sch")
@@ -6395,6 +6516,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "61165f53-9d28-4edc-ba28-feaa354dbc72")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/0f1ac7ef-71be-4cf4-81ac-90268323e1b3/fef311bf-17a1-48c9-b5cb-13c108cf7b12")
 		(sheetname "/ESC4/")
 		(sheetfile "ESC.kicad_sch")
@@ -6800,6 +6932,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a7f1cd81-3da0-48e4-b42e-5c780b0ae578")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -7376,6 +7519,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "af535fee-b24b-41f2-bdcb-ead406cfa44d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/f870c78f-43b6-4f66-afe4-21d85c4907b1/e1c307e0-da1e-4199-993c-565dacc1988b")
 		(sheetname "/ESC1/")
 		(sheetfile "ESC.kicad_sch")
@@ -7946,6 +8100,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "64e1c7d1-cb3e-4135-9fe8-377944358555")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -9924,6 +10089,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "2e07fc75-3beb-4d2a-9852-ae7d6ae60a91")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -12735,6 +12911,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "c4885ca7-a686-4295-98a4-769911e69f91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/0f1ac7ef-71be-4cf4-81ac-90268323e1b3/b81d2055-72dd-4f80-8595-bad8791ff875")
 		(sheetname "/ESC4/")
 		(sheetfile "ESC.kicad_sch")
@@ -13140,6 +13327,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "81411e12-6be1-49d2-ad2a-ae833bafd6bb")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -13551,6 +13749,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "e76e573c-c137-4c18-aee5-3ffbb9ffe2a8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/3fa70197-fd52-4922-8368-62c7feb267b9/fef311bf-17a1-48c9-b5cb-13c108cf7b12")
 		(sheetname "/ESC2/")
 		(sheetfile "ESC.kicad_sch")
@@ -13956,6 +14165,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "a333a2f9-a607-4b7b-83ec-8ec9c6fbfa58")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -14532,6 +14752,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "05b56d6d-d7cb-44c1-a8c4-a8c0ac3f22bd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/0f1ac7ef-71be-4cf4-81ac-90268323e1b3/7a614b05-edaf-45dd-b454-62f750565c5a")
 		(sheetname "/ESC4/")
 		(sheetfile "ESC.kicad_sch")
@@ -14937,6 +15168,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "b5ca3c48-b3de-4cd1-ab1a-eda36f5bc1a1")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -15513,6 +15755,17 @@
 				)
 			)
 		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "aa0fcb46-3157-4565-8470-e44c9bcb8ac5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(path "/3fa70197-fd52-4922-8368-62c7feb267b9/e1c307e0-da1e-4199-993c-565dacc1988b")
 		(sheetname "/ESC2/")
 		(sheetfile "ESC.kicad_sch")
@@ -15918,6 +16171,17 @@
 				(font
 					(size 1 1)
 					(thickness 0.15)
+				)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "F.SilkS")
+			(hide yes)
+			(uuid "2ec0027a-2714-40f7-a0f0-93e196a23150")
+			(effects
+				(font
+					(size 1.27 1.27)
 				)
 			)
 		)
@@ -19300,6 +19564,17 @@
 					(thickness 0.15)
 				)
 				(justify mirror)
+			)
+		)
+		(property "FT Rotation Offset" "270"
+			(at 0 0 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "4808222d-4cd3-4550-b94a-d473a1ebc1a5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(path "/f2b1e88a-6564-49b2-a51e-95df04d4872d")
@@ -52632,6 +52907,17 @@
 					(thickness 0.15)
 				)
 				(justify mirror)
+			)
+		)
+		(property "FT Position Offset" "0,2.833"
+			(at 0 0 0)
+			(layer "B.SilkS")
+			(hide yes)
+			(uuid "3a270231-380d-4030-be4a-0a96ab534507")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
 			)
 		)
 		(path "/a2a15004-bb55-4ba0-bb3e-9b254c23b035")

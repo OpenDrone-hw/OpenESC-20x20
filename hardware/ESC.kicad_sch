@@ -6376,7 +6376,9 @@
 
 (property "Manufacturer" "DOINGTER" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
 
-(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f1299f79-dc01-4e8f-8337-b1104cfae274")) (pin "3" (uuid "0056a60b-3a1d-47d1-8f48-6adb507f730a")) (pin "2" (uuid "ccbeb9fd-7493-4307-be67-66c156fbf533")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q21") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q9") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q15") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q3") (unit 1))))) 
+(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "f1299f79-dc01-4e8f-8337-b1104cfae274")) (pin "3" (uuid "0056a60b-3a1d-47d1-8f48-6adb507f730a")) (pin "2" (uuid "ccbeb9fd-7493-4307-be67-66c156fbf533")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q21") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q9") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q15") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q3") (unit 1)))) 
+
+(property "FT Rotation Offset" "270" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))) 
 
 (symbol (lib_id "PCM_Resistor_AKL:R_0402") (at 149.86 146.05 90) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (uuid "8bc6297c-b0cc-476c-b5e4-3b63308d9121") 
 
@@ -6466,7 +6468,9 @@
 
 (property "Manufacturer" "DOINGTER" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
 
-(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "55393112-7617-4e5e-bcc1-42b4ab1f5b9b")) (pin "3" (uuid "5b6f4625-406d-4ef6-b67d-f9855f7378f5")) (pin "2" (uuid "fbdd6072-0fa6-4159-9dda-6b6e8545fea3")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q20") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q8") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q14") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q2") (unit 1))))) 
+(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "55393112-7617-4e5e-bcc1-42b4ab1f5b9b")) (pin "3" (uuid "5b6f4625-406d-4ef6-b67d-f9855f7378f5")) (pin "2" (uuid "fbdd6072-0fa6-4159-9dda-6b6e8545fea3")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q20") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q8") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q14") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q2") (unit 1)))) 
+
+(property "FT Rotation Offset" "270" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))) 
 
 (symbol (lib_id "ESCLibrary:0201_1kR") (at 254 111.76 90) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (fields_autoplaced yes) (uuid "b7f2632a-37c3-45ff-83c3-f9088547e792") 
 
@@ -6518,7 +6522,9 @@
 
 (property "Manufacturer" "DOINGTER" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
 
-(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9db98fef-09e0-4290-a12c-4037e1056082")) (pin "3" (uuid "9648be18-33ec-43db-a0f7-133482726987")) (pin "2" (uuid "ddc10c96-1ddb-4096-aaec-1d943dd1c1f8")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q23") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q11") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q17") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q5") (unit 1))))) 
+(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "9db98fef-09e0-4290-a12c-4037e1056082")) (pin "3" (uuid "9648be18-33ec-43db-a0f7-133482726987")) (pin "2" (uuid "ddc10c96-1ddb-4096-aaec-1d943dd1c1f8")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q23") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q11") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q17") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q5") (unit 1)))) 
+
+(property "FT Rotation Offset" "270" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))) 
 
 (symbol (lib_id "power:GND") (at 229.87 116.84 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (fields_autoplaced yes) (uuid "bced1852-aff7-4a36-8611-bd5bceac7e1d") 
 
@@ -6670,7 +6676,9 @@
 
 (property "Manufacturer" "DOINGTER" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
 
-(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "63da6a09-04e1-4fa4-9dc2-4de7cf62a4b5")) (pin "3" (uuid "b93dc2d5-f2bb-4854-9a20-b4800be76a99")) (pin "2" (uuid "817e33aa-91e3-4753-b629-12ea7eb51755")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q19") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q7") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q13") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q1") (unit 1))))) 
+(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "63da6a09-04e1-4fa4-9dc2-4de7cf62a4b5")) (pin "3" (uuid "b93dc2d5-f2bb-4854-9a20-b4800be76a99")) (pin "2" (uuid "817e33aa-91e3-4753-b629-12ea7eb51755")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q19") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q7") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q13") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q1") (unit 1)))) 
+
+(property "FT Rotation Offset" "270" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))) 
 
 (symbol (lib_id "ESCLibrary:0201_220R") (at 49.53 80.01 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (fields_autoplaced yes) (uuid "ec7f2106-44a9-41c0-9d71-940acdd19990") 
 
@@ -6820,7 +6828,9 @@
 
 (property "Manufacturer" "DOINGTER" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
 
-(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ab632b1b-de36-4c51-8cde-aeb6ae6476db")) (pin "3" (uuid "d77f7307-9bf0-4de4-bfa3-a2b58efabb3a")) (pin "2" (uuid "def3ca04-5e4d-4a5f-9a7a-96e9da160409")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q22") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q10") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q16") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q4") (unit 1))))) 
+(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "ab632b1b-de36-4c51-8cde-aeb6ae6476db")) (pin "3" (uuid "d77f7307-9bf0-4de4-bfa3-a2b58efabb3a")) (pin "2" (uuid "def3ca04-5e4d-4a5f-9a7a-96e9da160409")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q22") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q10") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q16") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q4") (unit 1)))) 
+
+(property "FT Rotation Offset" "270" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))) 
 
 (symbol (lib_id "PCM_Transistor_MOSFET_AKL:2N6660") (at 157.48 160.02 0) (unit 1) (body_style 1) (exclude_from_sim no) (in_bom yes) (on_board yes) (in_pos_files yes) (dnp no) (fields_autoplaced yes) (uuid "fef311bf-17a1-48c9-b5cb-13c108cf7b12") 
 
@@ -6846,4 +6856,6 @@
 
 (property "Manufacturer" "DOINGTER" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) 
 
-(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "749be82f-8204-424d-883c-faa2e6b6b26a")) (pin "3" (uuid "379bf24b-4f8f-4d7b-ac9d-05709be24326")) (pin "2" (uuid "5c6710b2-a518-4715-bf85-d4707dd6b918")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q24") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q12") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q18") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q6") (unit 1))))))
+(property "MPN" "DOY180N03T" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27)))) (pin "1" (uuid "749be82f-8204-424d-883c-faa2e6b6b26a")) (pin "3" (uuid "379bf24b-4f8f-4d7b-ac9d-05709be24326")) (pin "2" (uuid "5c6710b2-a518-4715-bf85-d4707dd6b918")) (instances (project "4in1-mini" (path "/612d09d9-c556-41af-8a15-92be360f8e81/0f1ac7ef-71be-4cf4-81ac-90268323e1b3" (reference "Q24") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/3fa70197-fd52-4922-8368-62c7feb267b9" (reference "Q12") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/6061fcc0-8b26-44e0-b078-a202b47fdd16" (reference "Q18") (unit 1)) (path "/612d09d9-c556-41af-8a15-92be360f8e81/f870c78f-43b6-4f66-afe4-21d85c4907b1" (reference "Q6") (unit 1)))) 
+
+(property "FT Rotation Offset" "270" (at 0 0 0) (hide yes) (show_name no) (do_not_autoplace no) (effects (font (size 1.27 1.27))))))
