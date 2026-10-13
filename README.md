@@ -34,7 +34,7 @@ standard 8-pin connector.
 | Dimensions | 31.2 x 33.0 mm |
 | PCB | 6-layer, 1.6 mm, 2 oz copper |
 
-Technical write-up, part list and layout constraints: in the git history of AGENTS.md, `git show dc0de55:AGENTS.md`.
+Technical write-up, part list and layout constraints: [AGENTS.md](AGENTS.md).
 
 ## In the line
 
