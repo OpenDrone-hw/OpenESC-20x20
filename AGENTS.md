@@ -124,7 +124,7 @@ The [Board rules](#board-rules) at the end of this file apply, a CI-checked copy
 ## By task
 
 - Render the board for the README: `$KPY <hardware-tooling>/hardware/kicad/render_board.py hardware/4in1-mini.kicad_pcb --outdir images`, KiCad closed.
-- Estimate MOSFET losses and temperature (AM32 6-step): `python3 hardware/tools/esc_thermal.py -p 20x20 -i 30 -v 16.8 -d 80` (`--help` for sweeps and the 30x30 profile). The 20x20 profile models the superseded SP40N03GNJ, not the fitted DOY180N03T, so only its board geometry is current.
+- Estimate MOSFET losses and temperature (AM32 6-step, complementary PWM): `python3 hardware/tools/esc_thermal.py -p 20x20 -i 30 -v 16.8 -d 80 --comp-pwm` (`--help` for sweeps and the 30x30 profile). The 20x20 profile uses the DOY180N03T datasheet values, the 15R gate resistors and the 2 oz / 1 oz, 900 mm2 board. It is a model, not a measurement: at 30 A per phase, 4S, 80 % it gives 24.7 W on the board, about 162 C in strong prop wash and 44 s from 25 C to 150 C.
 
 ## Board rules
 

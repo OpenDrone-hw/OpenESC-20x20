@@ -5,12 +5,8 @@
 Models AM32 trapezoidal 6-step commutation with steady-state and transient thermal.
 
 MOSFET profiles:
-  20x20: SP40N03GNJ (Siliup Ver-1.2), Rg=15Ω. SUPERSEDED POWER STAGE. The
-         shipping OpenESC-20x20 uses 24x DOY180N03T (30 V, PowerDI3333-8, LCSC
-         C49441966, see hardware/docs/DESIGN.md). This profile has not been
-         re-parameterized from the DOY180N03T datasheet, so its loss and
-         temperature numbers do not describe the current board. Board geometry
-         (1030 mm², 6 layers) is current.
+  20x20: DOY180N03T (Doingter V1.0, hardware/KiCad-Library/datasheet/DOY180N03T.pdf),
+         Q1-Q24, Rg=15R (R1, R2, ...), 6L 2 oz outer / 1 oz inner, 900 mm2 outline.
   30x30: SP40N01GHNK (Siliup Ver-1.1), Rg=8Ω. Matches the OpenESC-30x30 board.
   Gate driver for both: NSG2065Q (NSIC V1.0).
 """
@@ -24,37 +20,39 @@ import math
 
 PROFILES = {
     "20x20": {
-        "name":         "20×20  SP40N03GNJ (3×3mm, SUPERSEDED, not the shipping part)",
-        # ── SP40N03GNJ datasheet (Ver-1.2) ──
-        "rds_on":       2.9e-3,     # Ω typ @ Vgs=10V, ID=20A, 25°C
-        "rds_on_max":   3.7e-3,     # Ω max
-        "rds_tempco":   1.45,       # normalized @ 100°C (p3 curve)
-        "rds_tempco_150": 1.70,     # normalized @ 150°C
-        "qg_at_10v":    15e-9,      # C  (from gate charge curve p3 @ Vgs=10V)
-        "qgd":          5.5e-9,     # C  gate-drain (Miller) charge
-        "vgs":          10.0,       # V
-        "rg":           15.0,       # Ω  external gate resistor
-        "v_plateau":    3.0,        # V  Miller plateau (transfer curve p3)
+        "name":         "20x20  DOY180N03T (3x3mm PowerDI3333-8)",
+        # -- DOY180N03T datasheet, Doingter V1.0 (KiCad-Library/datasheet/DOY180N03T.pdf) --
+        "rds_on":       1.0e-3,     # Ohm typ @ Vgs=10V, ID=20A, 25C (p2 table)
+        "rds_on_max":   1.2e-3,     # Ohm max (p2 table)
+        "rds_tempco":   1.38,       # normalized @ 100C (p3 Fig 5, read from curve)
+        "rds_tempco_150": 1.72,     # normalized @ 150C (p3 Fig 5)
+        "qg_at_10v":    39.8e-9,    # C  Qg typ @ Vgs=10V, VDS=20V, ID=30A (p2 table)
+        "qgd":          5.9e-9,     # C  gate-drain (Miller) charge (p2 table)
+        "vgs":          10.0,       # V  NSG2065Q VCC = +10V
+        "rg":           15.0,       # Ohm external gate resistor (15R, schematic)
+        "v_plateau":    2.9,        # V  Miller plateau (p4 Fig 7)
         # Switching: Qgd / I_gate through Rg
-        #   I_on  = (10-3)/15 = 0.47A → tr = 5.5nC/0.47A = 11.7ns
-        #   I_off = 3/15      = 0.20A → tf = 5.5nC/0.20A = 27.5ns
-        "tr":           11.7e-9,
-        "tf":           27.5e-9,
-        "vf_body_cold": 0.80,       # V  @ ~30A, 25°C (p4 curve extrapolated)
-        "vf_body_hot":  0.65,       # V  @ ~30A, 100°C
-        "trr":          14e-9,      # s  (p2)
-        "qrr":          23e-9,      # C  (p2)
-        "rth_jc":       2.27,       # °C/W (p2)
-        "pd_max":       55.0,       # W
-        "tj_max":       150.0,      # °C
-        # Board
+        #   I_on  = (10-2.9)/15 = 0.47A -> tr = 5.9nC/0.47A = 12.5ns
+        #   I_off = 2.9/15      = 0.19A -> tf = 5.9nC/0.19A = 30.5ns
+        "tr":           12.5e-9,
+        "tf":           30.5e-9,
+        "vf_body_cold": 1.2,        # V  VSD max @ ISD=30A, 25C (p2 table)
+        "vf_body_hot":  1.2,        # V  no diode curve in the datasheet: the 25C max is used
+        "trr":          85e-9,      # s  (p2 table)
+        "qrr":          34e-9,      # C  (p2 table)
+        "rth_jc":       1.43,       # C/W: the p1 table says 0.33, but p4 Fig 9 derates 87.5 W at
+                                    # Tc=25C to 0 at 150C, which is 1.43 C/W; the worse value is used
+        "pd_max":       87.5,       # W  (p4 Fig 9; the p1 table says 379 W)
+        "tj_max":       150.0,      # C  (p1)
+        # Board (hardware/4in1-mini.kicad_pcb)
         "board_mm":     20,         # mm mounting pattern
-        "board_area":   1030.0,     # mm² actual PCB (~31×33mm, from Edge.Cuts)
-        "r_copper":     3.2e-3,     # Ω per phase trace
-        "r_shunt":      0.2e-3,     # Ω
+        "board_area":   900.0,      # mm2 board outline polygon (31.3 x 33.1 mm bounding box)
+        "r_copper":     1.6e-3,     # Ohm per phase: the earlier 3.2 mOhm estimate for 1 oz / 0.5 oz,
+                                    # halved for 2 oz / 1 oz; an estimate, not measured
+        "r_shunt":      0.2e-3,     # Ohm Rsense2
         "layers":       6,
-        "oz_outer":     1,          # oz copper
-        "oz_inner":     0.5,
+        "oz_outer":     2,          # oz copper
+        "oz_inner":     1,
     },
     "30x30": {
         "name":         "30×30  SP40N01GHNK (5×6mm)",
@@ -76,7 +74,7 @@ PROFILES = {
         "vf_body_cold": 0.75,       # V  @ ~30A, 25°C (p3 source-drain diode curve)
         "vf_body_hot":  0.60,       # V  @ ~30A, 100°C
         "trr":          29e-9,      # s  (p2)
-        "qrr":          113e-9,     # C  (p2), much higher than SP40N03GNJ
+        "qrr":          113e-9,     # C  (p2)
         "rth_jc":       0.96,       # °C/W (p2), better, larger package
         "pd_max":       130.0,      # W
         "tj_max":       150.0,      # °C
@@ -114,30 +112,35 @@ THERMAL_SCENARIOS = {
 # Copper thickness: 1oz=35µm, 2oz=70µm, 0.5oz=17.5µm
 # Thermal conductivity: Cu=385 W/(m·K), FR4=0.3 W/(m·K)
 PCB_OPTIONS = {
-    "jlcpcb_6L_1oz": {
-        "label":    "JLCPCB 6L 1oz/0.5oz (current)",
+    "6L_1oz": {
+        "label":    "6L 1oz/0.5oz",
         "oz_outer": 1.0, "oz_inner": 0.5, "layers": 6,
-        "notes":    "Standard, free POFV via-in-pad",
+        "notes":    "",
     },
-    "jlcpcb_6L_2oz": {
-        "label":    "JLCPCB 6L 2oz/2oz (max multilayer)",
+    "6L_2oz_1oz": {
+        "label":    "6L 2oz/1oz (OpenESC-20x20 build)",
+        "oz_outer": 2.0, "oz_inner": 1.0, "layers": 6,
+        "notes":    "",
+    },
+    "6L_2oz": {
+        "label":    "6L 2oz/2oz",
         "oz_outer": 2.0, "oz_inner": 2.0, "layers": 6,
-        "notes":    "Max Cu at JLCPCB for 6L, ~2x bare board cost",
+        "notes":    "",
     },
-    "jlcpcb_4L_2oz": {
-        "label":    "JLCPCB 4L 2oz/2oz",
+    "4L_2oz": {
+        "label":    "4L 2oz/2oz",
         "oz_outer": 2.0, "oz_inner": 2.0, "layers": 4,
-        "notes":    "Cheaper than 6L, no free POFV",
+        "notes":    "",
     },
-    "jlcpcb_6L_3oz": {
-        "label":    "JLCPCB 6L 3oz/1oz (industry std ESC)",
+    "6L_3oz": {
+        "label":    "6L 3oz/1oz",
         "oz_outer": 3.0, "oz_inner": 1.0, "layers": 6,
-        "notes":    "What commercial 35A ESCs use",
+        "notes":    "common on commercial 35 A ESCs",
     },
-    "pcbway_6L_4oz": {
-        "label":    "PCBWay 6L 4oz/2oz (heavy Cu)",
+    "6L_4oz": {
+        "label":    "6L 4oz/2oz (heavy Cu)",
         "oz_outer": 4.0, "oz_inner": 2.0, "layers": 6,
-        "notes":    "PCBWay supports >2oz on multilayer, premium cost",
+        "notes":    "",
     },
 }
 
