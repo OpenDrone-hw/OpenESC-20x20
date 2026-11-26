@@ -85,10 +85,8 @@ Works with Betaflight and any other DShot-capable flight controller.
 | Board | `hardware/4in1-mini.kicad_pcb`, 6 layers, 1.6 mm, 2 oz outer copper, 1 oz inner copper. |
 | Fixtures | [OpenDrone-Fixtures](https://github.com/OpenDrone-hw/OpenDrone-Fixtures): `OpenESC-20x20-QC/` press-contact QC fixture, `OpenESC-20x20-Flashing/` ST-LINK pogo-pin jig used by the flash script |
 | Local library | `hardware/components.kicad_sym`, `hardware/4in1ESC.pretty/`, `hardware/4in1ESC.3dshapes/`. Frozen pre-consolidation libraries: use them, do not add to them |
-| Shared library | `hardware/KiCad-Library/`, pinned submodule of [OpenDrone-hw/KiCad-Library](https://github.com/OpenDrone-hw/KiCad-Library), nickname `OpenDrone`; 3D models and exact component datasheets resolve through `OPENDRONE_LIB` |
 | Design rules | `hardware/4in1-mini.kicad_dru` |
 | Board setup | 6 layers, 0.09 mm clearance and track, 0.16mm on outer layers (2 oz), via 0.35 on 0.20 drill |
-| Datasheets and shared parts | `hardware/KiCad-Library/datasheet/`, indexed with SHA-256 hashes in `datasheet/manifest.json`; `hardware/KiCad-Library/PARTS-USED.md` lists every proven shared part, column `Boards` filtered for `OpenESC-20x20` |
 
 The project is named `4in1-mini`, not after the repo. Renaming it would break
 the fab archive names, the release assets and the website board art.
@@ -112,13 +110,13 @@ The [Board rules](#board-rules) at the end of this file apply, a CI-checked copy
 
 | Rev | Date | Change |
 |---|---|---|
-| Rev3.3 | 2026-08-25 | Export OpenESC-20x20-rev3.3. Silkscreen rebranded OpenDrone -> incutec for export restriction reasons on flagging anything containing 'Drone'. First Incutec production run. |
+| Rev3.3 | 2026-08-25 | Export OpenESC-20x20-rev3.3. Silkscreen rebranded OpenDrone -> incutec for export restriction reasons on flagging anything containing 'Drone'. |
 | Rev3.2 | 2026-08-22 | Export OpenESC-20x20-rev3.2. Matched input network at the current-sense amplifier (R89/R90 1k, C40/C41 100n 50V, C42 1u) against the high-side common-mode feedthrough. |
 | Rev3.1 | 2026-08-14 | Export `20x20_ESC_Rev3.1`. Bulk bank: 22 x 10 uF 1206 on +BATT/GND, 21 of them PCB-only (19 CL refs absent from the schematic, CL50/CL51 doubled). Board setup moved to the line standard. |
 | Rev3 | 2026-08-11 | Input clamp diodes D1-D3 removed, TVS diodes offer no protection when rail voltage is this close to the MOSFET Vds. |
-| Rev2-20x20 | 2026-06-05 | Validated build. 15 pieces ordered by Incutec. |
+| Rev2-20x20 | 2026-06-05 | Validated build. |
 | V2 | 2026-05-04 | Export `V2`. |
-| V1 | 2026-03-18 | Export `V1`. A NextPCB variant export `V1_nextpcb` preceded it on 2026-03-14. |
+| V1 | 2026-03-18 | Export `V1`. A variant export `V1_nextpcb` preceded it on 2026-03-14. |
 | v0.3 | 2025-11-13 | Export `v0.3`. |
 | v0.2 | 2025-11-13 | Export `v0.2`. |
 | v0.1 | 2025-11-10 | First production export. |
@@ -126,6 +124,7 @@ The [Board rules](#board-rules) at the end of this file apply, a CI-checked copy
 ## By task
 
 - Render the board for the README: `$KPY <hardware-tooling>/hardware/kicad/render_board.py hardware/4in1-mini.kicad_pcb --outdir images`, KiCad closed.
+- Estimate MOSFET losses and temperature (AM32 6-step): `python3 hardware/tools/esc_thermal.py -p 20x20 -i 30 -v 16.8 -d 80` (`--help` for sweeps and the 30x30 profile). The 20x20 profile models the superseded SP40N03GNJ, not the fitted DOY180N03T, so only its board geometry is current.
 
 ## Board rules
 
